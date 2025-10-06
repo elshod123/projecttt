@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">TRADING DEMO</div>
+        <nav>
+            <a href="#">Bozorlar</a>
+            <a href="#">Savdolar</a>
+            <a href="#">Hamyon</a>
+        </nav>
+    </header>
+
+    <div class="main-container">
+        <div class="left-panel">
+            <h3>BTC/USD</h3>
+            <div id="current-price" class="price-display">
+                <span class="price">45,000.00</span>
+                <span class="change positive">(+1.25%)</span>
+            </div>
+            <div class="stats">
+                <p>Ochiq: <span id="open">44,500.00</span></p>
+                <p>Yuqori: <span id="high">45,100.00</span></p>
+                <p>Past: <span id="low">44,450.00</span></p>
+            </div>
+        </div>
+
+        <div class="chart-area">
+            <div class="tradingview-widget-container" style="height:100%; width:100%">
+                <div id="tradingview_123456" style="height:100%;"></div>
+                <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                <script type="text/javascript">
+                new TradingView.widget(
+                {
+                "autosize": true,
+                "symbol": "BINANCE:BTCUSDT",
+                "interval": "60",
+                "timezone": "Etc/UTC",
+                "theme": "dark",
+                "style": "1",
+                "locale": "en",
+                "enable_publishing": false,
+                "allow_symbol_change": true,
+                "container_id": "tradingview_123456"
+                }
+                );
+                </script>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <h3>Savdo Paneli</h3>
+            <div class="trade-box">
+                <label for="amount">Miqdor (USD):</label>
+                <input type="number" id="amount" value="100" min="10">
+                
+                <label for="leverage">Pley: X</label>
+                <input type="range" id="leverage" min="1" max="100" value="10" oninput="document.getElementById('leverage-val').innerText = this.value">
+                <span id="leverage-val">10</span>x
+
+                <button class="trade-button buy" onclick="executeTrade('BUY')">BUY (LONG)</button>
+                <button class="trade-button sell" onclick="executeTrade('SELL')">SELL (SHORT)</button>
+            </div>
+
+            <div class="positions">
+                <h4>Ochiq Pozitsiyalar</h4>
+                <ul id="position-list">
+                    <li class="no-position">Hozircha pozitsiyalar yo'q.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

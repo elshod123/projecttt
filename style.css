@@ -1,0 +1,172 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    background-color: #121212; 
+    color: #e0e0e0; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #1e1e1e;
+    border-bottom: 1px solid #333;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #4CAF50; 
+}
+
+.navbar a {
+    color: #e0e0e0;
+    text-decoration: none;
+    margin-left: 25px;
+    transition: color 0.2s;
+}
+
+.navbar a:hover {
+    color: #4CAF50;
+}
+
+.main-container {
+    display: flex;
+    flex-grow: 1;
+    padding: 15px;
+    gap: 15px;
+}
+
+.left-panel, .right-panel, .chart-area {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.left-panel {
+    flex-basis: 250px;
+    flex-shrink: 0;
+}
+
+.price-display {
+    margin: 10px 0 20px 0;
+}
+
+.price {
+    font-size: 2.2em;
+    font-weight: bold;
+    display: block;
+}
+
+.change {
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.positive {
+    color: #4CAF50;
+}
+
+.negative {
+    color: #F44336; 
+}
+
+.stats p {
+    margin: 5px 0;
+}
+
+.chart-area {
+    flex-grow: 1;
+    min-width: 400px;
+}
+
+.chart-placeholder {
+    height: 90%;
+    background-color: #121212;
+    border: 1px dashed #444;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.right-panel {
+    flex-basis: 300px;
+    flex-shrink: 0;
+}
+
+.trade-box {
+    padding: 15px 0;
+    border-bottom: 1px solid #333;
+    margin-bottom: 15px;
+}
+
+.trade-box label, .trade-box input {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.trade-box input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    color: #e0e0e0;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.trade-button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.buy {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+.buy:hover {
+    background-color: #45a049;
+}
+
+.sell {
+    background-color: #F44336; 
+    color: #fff;
+}
+
+.sell:hover {
+    background-color: #d32f2f;
+}
+
+#position-list {
+    list-style: none;
+    padding: 0;
+}
+
+#position-list li {
+    background-color: #2a2a2a;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.no-position {
+    color: #aaa;
+    text-align: center;
+}
